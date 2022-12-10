@@ -9,12 +9,12 @@ import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
-const API_URL = 'https://mymoviesapi2023.herokuapp.com/';
+const API_URL = 'https://myflix-movieapp-bylisa.herokuapp.com/';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserRegistrationService {
+export class fetchApiDataService {
   constructor(private http: HttpClient) {}
   // Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {

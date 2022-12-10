@@ -1,0 +1,35 @@
+// Define variables for colors and font sizes
+$primary-color: #333;
+$secondary-color: #ccc;
+$font-size: 16px;
+
+// Style the mat-card element
+mat-card {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $secondary-color;
+  border-radius: 10px;
+
+  // Style the mat-card-title and mat-card-actions elements
+  mat-card-title, mat-card-actions {
+    text-align: center;
+  }
+
+  // Style the mat-form-field and mat-raised-button elements
+  mat-form-field, mat-raised-button {
+    width: 100%;
+  }
+
+  // Style the mat-form-field elements
+  mat-form-field {
+    margin: 10px 0;
+  }
+
+  // Style the mat-raised-button element
+  mat-raised-button {
+    background-color: $primary-color;
+    color: white;
+    font-weight: bold;
+  }
+}
