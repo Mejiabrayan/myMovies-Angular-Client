@@ -28,12 +28,11 @@ export class UserProfileComponent implements OnInit {
   // fetches user information from our api
   getUser(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
-        this.user = resp;
-        console.log(this.user);
-        return this.user;
-      });
-    }
-
+      this.user = resp;
+      console.log(this.user);
+      return this.user;
+    });
+  }
 
   updateUser(): void {
     this.dialog.open(EditUserProfileComponent, {

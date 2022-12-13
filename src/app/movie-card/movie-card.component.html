@@ -30,15 +30,23 @@
         Director
       </button>
       <button mat-button color="primary">Synopsis</button>
-
+      <!-- button shows if you favored it or not  -->
+      <button
+        *ngIf="isFavoriteMovies(movie._id) === false"
+        mat-button
+        (click)="addFavorite(movie._id)"
+        color="primary"
+      >
+        <mat-icon>favorite_border</mat-icon>
+      </button>
       <button
         mat-button
         *ngIf="isFavoriteMovies(movie._id) === true"
         (click)="deleteFavorite(movie._id)"
         color="primary"
-        >
+      >
         <mat-icon class="mat-icon__style">favorite</mat-icon>
-    </button>
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

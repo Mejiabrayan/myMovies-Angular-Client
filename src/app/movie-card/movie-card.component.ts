@@ -23,8 +23,11 @@ export class MovieCardComponent {
     public snackBar: MatSnackBar
   ) {}
 
+  // This will run when the component is initialized
   ngOnInit(): void {
+    // Get all movies
     this.getMovies();
+    // Get user's favorite movies
     this.getFavoriteMovies();
   }
   // Fetches Movies from API
