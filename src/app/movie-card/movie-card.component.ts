@@ -39,7 +39,7 @@ export class MovieCardComponent {
     });
   }
 
-  openSynopsisDialog(title: string, description: string): void {
+  openSynopsis(title: string, description: string): void {
     this.dialog.open(SynopsisComponent, {
       data: {
         Title: title,
@@ -70,6 +70,7 @@ export class MovieCardComponent {
       this.snackBar.open('You have added this movie to your favorites!', 'OK', {
         duration: 3000,
       });
+      
       this.ngOnInit();
     });
   }
