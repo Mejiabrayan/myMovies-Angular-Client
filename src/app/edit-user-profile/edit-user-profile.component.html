@@ -1,0 +1,58 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title
+      >Edit {{ loggedUser.Username }}'s Profile<br />
+      (Must enter password to confirm!)
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          [(ngModel)]="loggedUser.Username"
+          type="text"
+          value="{{ loggedUser.Username }}"
+          name="Username"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label class="edit-field">Password</mat-label>
+        <input
+          matInput
+          [(ngModel)]="loggedUser.Password"
+          type="password"
+          name="Password"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          [(ngModel)]="loggedUser.Email"
+          type="email"
+          value="{{ loggedUser.Email }}"
+          name="Email"
+          required
+        />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="updateUser()" color="basic">
+      <mat-icon>check</mat-icon>
+      Update profile
+    </button>
+    <button
+      mat-stroked-button
+      aria-label="Button to close the edit profile window."
+      mat-dialog-close
+      color="primary"
+    >
+      Close Window
+    </button>
+  </mat-card-actions>
+</mat-card>

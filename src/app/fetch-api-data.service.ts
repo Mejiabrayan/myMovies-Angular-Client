@@ -16,7 +16,6 @@ const API_URL = 'https://myflix-movieapp-bylisa.herokuapp.com/';
 })
 export class fetchApiDataService {
   constructor(private http: HttpClient) {}
-  // Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http
@@ -38,7 +37,6 @@ export class fetchApiDataService {
    */
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
-
     return this.http
       .get(API_URL + 'movies', {
         headers: new HttpHeaders({
@@ -91,31 +89,40 @@ export class fetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  /**
+   * @name getUser
+   * This method will send a request to the server to get all movies by a specific user
+   * @returns
+   */
+
   getUser(): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
-
     return this.http
-      .get(`${API_URL}movies/users/${username}`, {
+      .get(API_URL + 'users/' + username, {
         headers: new HttpHeaders({
-          Authorization: 'Bearer' + token,
+          Authorization: 'Bearer ' + token,
         }),
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  getFavoriteMovies(): Observable<any> {
+  /**
+   * @name getFavoriteMovies
+   * This method will send a request to the server to get all movies by a specific user
+   */
+   getFavorites(): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
-
     return this.http
-      .get(`${API_URL}users${username}/movies`, {
+      .get(API_URL + 'users/' + username + '/movies/', {
         headers: new HttpHeaders({
-          Authorization: 'Bearer' + token,
-        }),
+        Authorization: 'Bearer ' + token,
       })
-      .pipe(map(this.extractResponseData), catchError(this.handleError));
+    })
+    .pipe(map(this.extractResponseData),catchError(this.handleError));
   }
+
 
   addFavoriteMovies(MovieID: string): Observable<any> {
     const token = localStorage.getItem('token');

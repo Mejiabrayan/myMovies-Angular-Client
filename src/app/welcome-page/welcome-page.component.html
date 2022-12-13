@@ -1,0 +1,31 @@
+<div class="welcome-page">
+  <img class="img-bg" />
+  <mat-card-title class="welcome-page__title">
+    <h1>Welcome to myMovies!</h1>
+  </mat-card-title>
+  <mat-card-content class="welcome-page__subtitle">
+    <p>
+      This is a movie database application that allows you to search for movies,
+      add them to your favorites, and view details about them.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      (click)="openUserRegistrationDialog()"
+      style="margin-right: 10px"
+      color="primary"
+    >
+      Sign Up
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="openUserLoginDialog()"
+      style="margin-right: 10px"
+      color="primary"
+    >
+      Login
+    </button>
+  </mat-card-actions>
+</div>

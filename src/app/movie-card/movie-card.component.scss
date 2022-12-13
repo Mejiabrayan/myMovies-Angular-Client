@@ -1,0 +1,85 @@
+$cardColor: rgb(56, 56, 56);
+$textColor: #fff;
+$directedColor: rgb(197, 197, 197);
+$boxShadowColor: #1e1e1e;
+
+.movie-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 25px;
+  gap: 25px;
+  padding: 0 25px;
+}
+.mat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 25px 30px $boxShadowColor;
+  background-color: $cardColor;
+  margin: 25px;
+  padding: 20px 3px;
+}
+
+.mat-card-header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  color: $textColor;
+}
+
+.mat-card-title {
+  display: flex;
+  max-width: 210px;
+  justify-content: center;
+  text-align: center;
+}
+
+.mat-card-subtitle {
+  color: $directedColor;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+img {
+  width: 200px;
+  object-fit: contain;
+  margin: 0 auto;
+
+}
+
+.mat-icon-button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: crimson;
+}
+
+.mat-card > .mat-card-actions {
+  margin-left: 0;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  color: $directedColor;
+}
+
+.mat-icon__style {
+  color: $directedColor;
+  
+}
+
+
+
+// make flex more responsive
+@media (max-width: 600px) {
+  .movie-card {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
